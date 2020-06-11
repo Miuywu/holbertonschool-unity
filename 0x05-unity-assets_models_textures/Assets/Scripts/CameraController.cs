@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// Provides third-person camera tracking.
+/// Camera follows behind player.
 /// </summary>
 public class CameraController : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     float distance;
 
     /// <summary>
-    /// Initializes variables and locks cursor.
+    /// locks cursor.
     /// </summary>
     void Start()
     {
@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the camera position based on mouse input.
+    /// Camera rotation with mouse.
     /// </summary>
     void LateUpdate()
     {
