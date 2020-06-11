@@ -2,64 +2,64 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
 /// <summary>
-/// handle user input so the player can move left, right, forward, backward, diagonally and jump using the WASD and space keys.
+/// Provides player movement.
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-     public float speed = 8.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
-    public Transform camera;
+    public Transform cam;
+    private Transform playerTransform;
+    private CharacterController controller;
+    private Vector3 spawnPosition;
+    private float speed = 10f;
+    private float jumpHeight = 2f;
+    private float gravity = -9.81f;
+    private Vector3 velocity;
 
-    private Vector3 movement = Vector3.zero;
-    private Vector3 startPos;
-    private CharacterController cc;
-    private Transform t;
-
-    // Start is called before the first frame update
+    /// <summary>
+    /// Initializes components and spawn position.
+    /// </summary>
     void Start()
     {
-        cc = GetComponent<CharacterController>();
-        t = GetComponent<Transform>();
-        startPos = t.position;
+        controller = GetComponent<CharacterController>();
+        playerTransform = GetComponent<Transform>();
+        spawnPosition = playerTransform.position;
+        spawnPosition.y += 20;
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Computes player movement every frame.
+    /// </summary>
     void Update()
     {
-        //Movement
-        if (cc.isGrounded)
+        if (controller.isGrounded && velocity.y < 0)
         {
-            movement = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            movement = camera.right * movement.x + camera.forward * movement.z;
-            movement *= speed;
+            velocity.y = -0.01f;
+        }
 
-            if (Input.GetButtonDown("Jump"))
-            {
-                movement.y = jumpSpeed;
-            }
-        }
-        else
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+
+        Vector3 dir = new Vector3(x, 0f, z).normalized;
+        Vector3 force = Vector3.zero;
+
+        if (dir.magnitude >= 0.1f)
         {
-            float y = movement.y;
-            movement = new Vector3(Input.GetAxis("Horizontal"), y, Input.GetAxis("Vertical"));
-            movement = camera.right * movement.x + camera.forward * movement.z;
-            movement.y = y;
-            movement = transform.TransformDirection(movement);
-            movement.x *= speed;
-            movement.z *= speed;
+            float targetAngle = Mathf.Atan2(dir.x, dir.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+            Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+            force =  moveDir * speed * Time.deltaTime;
         }
-        
-        movement.y -= gravity * Time.deltaTime;
-        cc.Move(movement * Time.deltaTime);
-        //respawn
-        if (t.position.y < -15)
+
+        if (controller.isGrounded && Input.GetButton("Jump"))
         {
-            movement = new Vector3(0.0f, movement.y, 0.0f);
-            cc.Move(movement * Time.deltaTime);
-            t.position = new Vector3(startPos.x, startPos.y + 15, startPos.z);
+            velocity.y += Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
+        velocity.y += gravity * Time.deltaTime;
+        controller.Move(velocity * Time.deltaTime + force);
+
+        if (playerTransform.position.y < -20)
+        {
+            playerTransform.position = spawnPosition;
         }
     }
 }
