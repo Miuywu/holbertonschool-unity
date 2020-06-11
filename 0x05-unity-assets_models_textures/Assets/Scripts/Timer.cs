@@ -8,7 +8,7 @@ using UnityEngine;
 /// </summary>
 public class Timer : MonoBehaviour
 {
-    public Text timerText;
+    public Text ttext;
     private float time = 0f;
     private bool stop = false;
 
@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
         if (stop == false)
         {
             time += Time.deltaTime;
-            timerText.text = string.Format("{0:0}:{1:00}.{2:00}", time / 60, time % 60, time * 100 % 100);
+            ttext.text = string.Format("{0:0}:{1:00}.{2:00}", time / 60, time % 60, time * 100 % 100);
         }
     }
 
@@ -30,11 +30,11 @@ public class Timer : MonoBehaviour
     /// <param name="other">The collider that touches the player.</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "WinFlag")
+        if (other.name == "WinFlag" || other.name == "ChallengeFlag")
         {
             stop = true;
-            timerText.fontSize = 60;
-            timerText.color = Color.green;
+            ttext.fontSize = 60;
+            ttext.color = Color.green;
         }
     }
 }

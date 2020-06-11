@@ -10,7 +10,7 @@ public class TimerTrigger : MonoBehaviour
     public GameObject player;
 
     /// <summary>
-    /// Triggers the timer when the player moves.
+    /// Starts timer if the player moves.
     /// </summary>
     /// <param name="other">The collider that exited the trigger area.</param>
     private void OnTriggerExit(Collider other)
