@@ -1459,6 +1459,7 @@ GameObject:
   - component: {fileID: 1282272888}
   - component: {fileID: 1282272887}
   - component: {fileID: 1282272890}
+  - component: {fileID: 1282272891}
   m_Layer: 0
   m_Name: CutsceneCamera
   m_TagString: Untagged
@@ -1549,6 +1550,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1282272891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1282272886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8f0cdfbe9b86564eaf75d4ba5a0557e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
+  Timer: {fileID: 0}
+  Player: {fileID: 0}
 --- !u!4 &1300840418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: bf752292d51c7864b8dc1d49d1ef7f47,
@@ -2519,6 +2535,11 @@ PrefabInstance:
       propertyPath: cam
       value: 
       objectReference: {fileID: 1082470431}
+    - target: {fileID: 114092377417146856, guid: 8b3fb5cacdcd29942a3ed05eef98b177,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 114534790805802116, guid: 8b3fb5cacdcd29942a3ed05eef98b177,
         type: 3}
       propertyPath: timerText
@@ -2582,7 +2603,7 @@ PrefabInstance:
     - target: {fileID: 6277825952035430142, guid: 8b3fb5cacdcd29942a3ed05eef98b177,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6277825952035430142, guid: 8b3fb5cacdcd29942a3ed05eef98b177,
         type: 3}
