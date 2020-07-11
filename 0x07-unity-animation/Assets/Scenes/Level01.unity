@@ -112,6 +112,67 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &15588408
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 727233900}
+    m_Modifications:
+    - target: {fileID: 100142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_Name
+      value: ty
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400142, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9500000, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d8bc40ddabfe05e4ca7425f41b45432d, type: 3}
 --- !u!4 &53839894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 652c9245689d47047968c2020f300db3,
@@ -1447,6 +1508,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ca90a6c49aac240bb0d75dc225a134, type: 3}
+--- !u!1 &1159819652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 847467886402293131, guid: bf773517da6e67a46a806775395b8c3c,
+    type: 3}
+  m_PrefabInstance: {fileID: 6948192198134417159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1282272886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1562,9 +1629,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8f0cdfbe9b86564eaf75d4ba5a0557e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MainCamera: {fileID: 0}
-  Timer: {fileID: 0}
-  Player: {fileID: 0}
+  MainCamera: {fileID: 1082470428}
+  Timer: {fileID: 1159819652}
+  Player: {fileID: 727233894}
 --- !u!4 &1300840418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: bf752292d51c7864b8dc1d49d1ef7f47,
@@ -2564,6 +2631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4908361758599220304, guid: 8b3fb5cacdcd29942a3ed05eef98b177,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6277825952035430142, guid: 8b3fb5cacdcd29942a3ed05eef98b177,
         type: 3}
