@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="emaillogo" size="0.010000 0.010000" />
+    <ImageTarget name="GitHub" size="0.010000 0.010000" />
+    <ImageTarget name="twitter-social-media-icon-design-template-vector-png_127095" size="0.010000 0.010000" />
+    <ImageTarget name="linkedin" size="0.010000 0.010000" />
+    <ImageTarget name="Card" size="1.000000 0.998267" />
+    <ImageTarget name="ARcard" size="0.100000 0.099827" />
+  </Tracking>
+</QCARConfig>
